@@ -1,0 +1,33 @@
+server:
+  port: 9000
+
+#===================属性读取测试=======================
+test1: test1
+test3: test3
+
+test4:
+  four1: 4-1
+  four2: "${random.int}"
+test5:
+  #relaxedBinding: binding1
+  #relaxed-binding: binding2
+  relaxed_binding: binding3
+  #RELAXEDBINDING:
+
+
+#spring boot starter 测试属性
+sms-config:
+  appid: zab
+  account-sid: 123
+  auth-token: xxx
+
+spring:
+  datasource:
+    url: jdbc:mysql://81.68.137.141:3306/zab?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: P0zxW1DzrlB@*7Xt
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 81.68.137.141
+    port: 6379
+    password: P0zxW1DzrlB@*7Xt

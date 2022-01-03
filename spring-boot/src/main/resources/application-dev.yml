@@ -1,0 +1,15 @@
+server:
+  port: 9000
+
+#===================属性读取测试=======================
+test1: test1
+test3: test3
+
+test4:
+  four1: 4-1
+  four2: "${random.uuid}"
+test5:
+  relaxedBinding: binding1
+  relaxed-binding: binding2
+  relaxed_binding: binding3
+  RELAXEDBINDING: binding4
