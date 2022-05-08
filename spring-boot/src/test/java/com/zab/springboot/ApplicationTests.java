@@ -2,6 +2,7 @@ package com.zab.springboot;
 
 import cn.hutool.json.JSONUtil;
 import com.zab.springboot.aop.AspectParam;
+import com.zab.springboot.corefeature.factorybean.FactoryBeanTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -19,6 +20,9 @@ class ApplicationTests {
 
     @Autowired
     MockMvc mvc;
+
+    @Autowired
+    private FactoryBeanTest factoryBeanTest;
     @Test
     void testWithMockMvc() throws Exception {
         AspectParam zhangsan = AspectParam.builder().code("007").name("zhangsan").build();
@@ -29,5 +33,9 @@ class ApplicationTests {
                  )
                 .andExpect(status().isOk())
                 .andExpect(content().string("zhangsan"));
+    }
+    @Test
+    void testFactoryBean() throws Exception {
+        factoryBeanTest.testFactoryBean();
     }
 }
