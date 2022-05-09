@@ -3,6 +3,7 @@ package com.zab.springboot.webconfig;
 import com.zab.springboot.aop.interceptor.MyInterceptor;
 import com.zab.springboot.aop.interceptor.TokenInterceptor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
@@ -19,5 +20,10 @@ public class MyWebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new TokenInterceptor());
         registry.addInterceptor(new MyInterceptor());
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(new DateConverter());
     }
 }

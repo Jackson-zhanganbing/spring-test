@@ -5,6 +5,7 @@ import com.zab.springboot.aop.ClassCheck;
 import com.zab.springboot.common.ResponseVo;
 import com.zab.springboot.controller.starter.StarterTestService;
 import com.zab.springboot.properties.*;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import java.util.Date;
  * @author zab
  * @date 2021-11-19 23:33
  */
+@Slf4j
 @RestController
 @ClassCheck
 @RequestMapping("/api")
@@ -133,5 +135,12 @@ public class HelloController extends BaseController {
                 .weight("11").build();
         ResponseVo responseVo = new ResponseVo();
         return responseVo.setCode("0").setMessage("success").setData(testBean);
+    }
+
+    @RequestMapping("/testDate")
+    public ResponseVo testDate(@RequestBody TestBean dto){
+        Date birthday = dto.getNowDate();
+        log.info(birthday.toString());
+        return ResponseVo.success("ok");
     }
 }
