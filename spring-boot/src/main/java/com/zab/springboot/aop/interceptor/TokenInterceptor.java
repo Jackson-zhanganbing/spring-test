@@ -36,7 +36,7 @@ public class TokenInterceptor implements HandlerInterceptor {
             PrintWriter writer = response.getWriter();
             response.setContentType(ContentType.JSON.toString());
             response.setCharacterEncoding("UTF-8");
-            writer.print(JSONUtil.toJsonStr(ResponseVo.fail("400", "token is missing")));
+            writer.print(JSONUtil.toJsonStr(ResponseVo.fail("400", "TokenInterceptor==>token is missing")));
             return false;
         }
         return true;

@@ -34,7 +34,7 @@ public class AnnotationLoginFilter implements Filter {
             PrintWriter writer = servletResponse.getWriter();
             servletResponse.setContentType(ContentType.JSON.toString());
             servletResponse.setCharacterEncoding("UTF-8");
-            writer.print(JSONUtil.toJsonStr(ResponseVo.fail("400","token is missing")));
+            writer.print(JSONUtil.toJsonStr(ResponseVo.fail("400","AnnotationLoginFilter==>token is missing")));
         }
 
         filterChain.doFilter(servletRequest,servletResponse);

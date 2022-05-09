@@ -1,5 +1,6 @@
 package com.zab.springboot;
 
+import com.zab.springboot.enableannotation.EnableLogin;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +13,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @author zab
  * @date 2021-11-21 21:16
  */
+@EnableLogin
 @SpringBootApplication
 @MapperScan(basePackages = "com.zab.springboot.project.mapper")
 @ServletComponentScan("com.zab.springboot.aop.filter")
