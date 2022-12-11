@@ -15,7 +15,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  */
 @EnableLogin
 @SpringBootApplication
-@MapperScan(basePackages = "com.zab.springboot.project.mapper")
+@MapperScan(basePackages = "com.zab.springboot.project.mapper, com.zab.springboot.common.async.mapper")
 @ServletComponentScan("com.zab.springboot.aop.filter")
 public class Application {
 
