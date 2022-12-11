@@ -18,15 +18,15 @@ import java.util.concurrent.*;
 public class AsyncTaskExecutor implements Runnable{
 
     public static final String THREAD_NAME = "async_task";
-    private static final int CORE_POOL_SIZE = 10;
-    private static final int MAX_POOL_SIZE = 18;
+    private static final int CORE_POOL_SIZE = 5;
+    private static final int MAX_POOL_SIZE = 5;
     private static final int KEEP_ALIVE_TIME = 60;
 
     private static AsyncTaskExecutor instance;
 
-    private ThreadPoolExecutor threadPoolExecutor;
+    private volatile ThreadPoolExecutor threadPoolExecutor;
 
-    private static BlockingQueue<RealTask> taskQueue = new ArrayBlockingQueue<>(500);
+    private static final BlockingQueue<RealTask> taskQueue = new ArrayBlockingQueue<>(500);
     private AsyncTaskExecutor(){
 
     }
@@ -60,7 +60,7 @@ public class AsyncTaskExecutor implements Runnable{
     @Override
     public void run() {
         for (;;){
-            ThreadUtil.sleep(1000);
+            ThreadUtil.sleep(100);
             doTaskExecute();
         }
     }
@@ -90,9 +90,7 @@ public class AsyncTaskExecutor implements Runnable{
                     Method method = task.getMethod();
                     try {
                         method.invoke(task.getObject(), task.getTaskNo());
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InvocationTargetException e) {
+                    } catch (IllegalAccessException | InvocationTargetException e) {
                         e.printStackTrace();
                     }
                 }
@@ -124,7 +122,7 @@ public class AsyncTaskExecutor implements Runnable{
 
     static class AsyncTaskThreadFactory implements ThreadFactory {
 
-        private String threadName;
+        private final String threadName;
 
         public AsyncTaskThreadFactory(String threadName) {
             this.threadName = threadName;
