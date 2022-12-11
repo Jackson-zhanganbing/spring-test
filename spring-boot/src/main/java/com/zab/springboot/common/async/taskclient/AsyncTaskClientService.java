@@ -4,6 +4,7 @@ import com.zab.springboot.common.async.AsyncTaskContext;
 import com.zab.springboot.common.async.RealTask;
 import com.zab.springboot.common.async.entity.AsyncTask;
 import com.zab.springboot.common.async.taskregister.AsyncTaskRegister;
+import org.apache.logging.log4j.core.util.UuidUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +20,14 @@ public class AsyncTaskClientService {
     @Autowired
     private AsyncTaskRegister asyncTaskRegister;
 
-    public void addAsyncTask(String taskCode){
+    public String addAsyncTask(String taskCode){
         AsyncTaskContext asyncTaskContext = new AsyncTaskContext();
         asyncTaskContext.setTaskCode(taskCode);
         AsyncTask asyncTask = new AsyncTask();
-        asyncTask.setTaskCode(taskCode).setTaskName("test").setFileName("fileName").setFileUrl("https");
+        asyncTask.setTaskCode(taskCode).setTaskName("test").setFileName("fileName").setFileUrl("https").setStatus(0);
         asyncTaskContext.setAsyncTask(asyncTask);
-        asyncTaskRegister.registerTask(asyncTaskContext);
+        return asyncTaskRegister.registerTask(asyncTaskContext);
     }
+
+
 }

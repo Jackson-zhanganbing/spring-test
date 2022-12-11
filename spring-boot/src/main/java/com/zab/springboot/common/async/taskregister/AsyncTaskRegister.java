@@ -1,5 +1,6 @@
 package com.zab.springboot.common.async.taskregister;
 
+import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import com.zab.springboot.common.async.AsyncTaskContext;
 import com.zab.springboot.common.async.AsyncTaskException;
@@ -34,7 +35,7 @@ public class AsyncTaskRegister {
      * @author zab
      * @date 2022/12/11 1:19
      */
-    public boolean registerTask(AsyncTaskContext asyncTaskContext){
+    public String registerTask(AsyncTaskContext asyncTaskContext){
         //1、校验参数
         checkParam(asyncTaskContext);
 
@@ -48,12 +49,21 @@ public class AsyncTaskRegister {
     private void addTaskToQueue(AsyncTaskContext asyncTaskContext) {
         String taskCode = asyncTaskContext.getTaskCode();
         RealTask task = listableAsyncTaskRepository.getTask(taskCode);
+        //注册任务的时候，给任务赋值一个唯一编号
+        String taskNo = RandomUtil.randomString(64);
+        task.setTaskNo(taskNo);
+
+        AsyncTask asyncTask = asyncTaskContext.getAsyncTask();
+        asyncTask.setTaskNo(taskNo);
+        asyncTaskContext.setAsyncTask(asyncTask);
+
         AsyncTaskExecutor.getInstance().addTask(task);
     }
 
-    private boolean saveTask(AsyncTaskContext asyncTaskContext) {
+    private String saveTask(AsyncTaskContext asyncTaskContext) {
         AsyncTask asyncTask = asyncTaskContext.getAsyncTask();
-        return asyncTaskService.save(asyncTask);
+        asyncTaskService.save(asyncTask);
+        return asyncTask.getTaskNo();
     }
 
     private void checkParam(AsyncTaskContext asyncTaskContext) {

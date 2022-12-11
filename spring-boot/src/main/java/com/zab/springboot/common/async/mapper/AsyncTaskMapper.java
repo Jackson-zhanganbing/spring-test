@@ -3,6 +3,7 @@ package com.zab.springboot.common.async.mapper;
 import com.zab.springboot.common.async.entity.AsyncTask;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -14,4 +15,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 public interface AsyncTaskMapper extends BaseMapper<AsyncTask> {
 
+    void updateByTaskNo(@Param("taskNo") String taskNo, @Param("status") Integer status);
 }

@@ -1,5 +1,6 @@
 package com.zab.springboot.common.async.service;
 
+import com.zab.springboot.common.ResponseVo;
 import com.zab.springboot.common.async.entity.AsyncTask;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IAsyncTaskService extends IService<AsyncTask> {
 
+    ResponseVo getTaskStatus(String taskNo);
 }

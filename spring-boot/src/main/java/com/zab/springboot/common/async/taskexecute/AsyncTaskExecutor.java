@@ -89,7 +89,7 @@ public class AsyncTaskExecutor implements Runnable{
                 public void run() {
                     Method method = task.getMethod();
                     try {
-                        method.invoke(task.getObject(), null);
+                        method.invoke(task.getObject(), task.getTaskNo());
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     } catch (InvocationTargetException e) {

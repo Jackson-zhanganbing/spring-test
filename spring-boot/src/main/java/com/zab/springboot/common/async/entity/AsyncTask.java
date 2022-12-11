@@ -32,6 +32,11 @@ public class AsyncTask implements Serializable {
     private Long id;
 
     /**
+     * 任务编号
+     */
+    private String taskNo;
+
+    /**
      * 任务code
      */
     private String taskCode;
@@ -55,6 +60,11 @@ public class AsyncTask implements Serializable {
      * 任务名称
      */
     private Integer fileSize;
+
+    /**
+     * 任务执行状态：0：new，1：running，2：done
+     */
+    private Integer status;
 
     /**
      * 创建人

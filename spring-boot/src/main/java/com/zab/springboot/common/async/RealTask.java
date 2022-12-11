@@ -18,4 +18,6 @@ public class RealTask {
     private Object object;
 
     private String taskCode;
+
+    private String taskNo;
 }

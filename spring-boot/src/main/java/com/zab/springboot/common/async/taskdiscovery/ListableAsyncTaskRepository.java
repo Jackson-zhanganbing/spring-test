@@ -6,13 +6,16 @@ import com.zab.springboot.common.async.AsyncTaskException;
 import com.zab.springboot.common.async.AsyncTaskMethod;
 import com.zab.springboot.common.async.RealTask;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.core.util.UuidUtil;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Set;
@@ -49,9 +52,10 @@ public class ListableAsyncTaskRepository implements ApplicationContextAware , Sm
             Object bean = applicationContext.getBean(beanName);
             Method[] declaredMethods = bean.getClass().getDeclaredMethods();
             for (Method declaredMethod : declaredMethods) {
-                if (declaredMethod.isAnnotationPresent(AsyncTaskMethod.class)) {
-                    AsyncTaskMethod annotation = declaredMethod.getAnnotation(AsyncTaskMethod.class);
-                    String taskCode = annotation.taskCode();
+
+                AsyncTaskMethod asyncTaskMethod = AnnotationUtils.findAnnotation(declaredMethod, AsyncTaskMethod.class);
+                if (asyncTaskMethod != null) {
+                    String taskCode = asyncTaskMethod.taskCode();
                     checkAsyncTaskCode(taskCode);
 
                     RealTask realTask = new RealTask();
