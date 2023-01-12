@@ -32,6 +32,11 @@ public class TokenInterceptor implements HandlerInterceptor {
         log.info("================TokenInterceptor preHandle================");
         String token = request.getHeader("token");
 
+        //临时去掉
+        if (StrUtil.isBlank(token)) {
+            return true;
+        }
+
         if (StrUtil.isBlank(token)) {
             PrintWriter writer = response.getWriter();
             response.setContentType(ContentType.JSON.toString());

@@ -33,6 +33,11 @@ public class LoginFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest)servletRequest;
         String token = request.getHeader("token");
+        //临时去掉
+        if (StrUtil.isBlank(token)) {
+            filterChain.doFilter(servletRequest,servletResponse);
+            return;
+        }
         // 转换成自己覆写的类，这样做，可以重复利用request的参数
         MyRequestWrapper myRequestWrapper = new MyRequestWrapper(request);
         ThreadLocalUtil.set("requestBody", myRequestWrapper.getBodyStr());
