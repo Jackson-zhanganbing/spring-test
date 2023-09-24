@@ -1,13 +1,12 @@
 package com.zab.springboot.common.async.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
-import java.time.LocalDateTime;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -69,22 +68,26 @@ public class AsyncTask implements Serializable {
     /**
      * 创建人
      */
+    @TableField(value = "create_by",fill = FieldFill.INSERT)
     private String createBy;
 
     /**
      * 创建时间
      */
-    private LocalDateTime createTime;
+    @TableField(value = "create_time", fill = FieldFill.INSERT)
+    private Date createTime;
 
     /**
      * 更新人
      */
+    @TableField(value = "update_by",fill = FieldFill.INSERT_UPDATE)
     private String updateBy;
 
     /**
      * 更新时间
      */
-    private LocalDateTime updateTime;
+    @TableField(value = "update_time",fill = FieldFill.INSERT_UPDATE)
+    private Date updateTime;
 
 
 }
