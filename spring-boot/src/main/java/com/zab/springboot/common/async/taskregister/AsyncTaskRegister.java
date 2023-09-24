@@ -1,5 +1,6 @@
 package com.zab.springboot.common.async.taskregister;
 
+import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import com.zab.springboot.common.async.AsyncTaskContext;
@@ -50,7 +51,7 @@ public class AsyncTaskRegister {
         String taskCode = asyncTaskContext.getTaskCode();
         RealTask task = listableAsyncTaskRepository.getTask(taskCode);
         //注册任务的时候，给任务赋值一个唯一编号
-        String taskNo = RandomUtil.randomString(64);
+        String taskNo = IdUtil.getSnowflake().nextIdStr();
         task.setTaskNo(taskNo);
 
         AsyncTask asyncTask = asyncTaskContext.getAsyncTask();
