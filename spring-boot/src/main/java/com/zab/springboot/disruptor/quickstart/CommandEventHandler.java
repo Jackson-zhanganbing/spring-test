@@ -1,4 +1,4 @@
-package com.zab.springboot.disruptor;
+package com.zab.springboot.disruptor.quickstart;
 
 import com.lmax.disruptor.EventHandler;
 import com.lmax.disruptor.RingBuffer;

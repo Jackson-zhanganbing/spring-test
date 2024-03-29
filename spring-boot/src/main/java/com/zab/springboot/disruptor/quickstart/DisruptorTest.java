@@ -1,4 +1,4 @@
-package com.zab.springboot.disruptor;
+package com.zab.springboot.disruptor.quickstart;
 
 import com.lmax.disruptor.BlockingWaitStrategy;
 import com.lmax.disruptor.RingBuffer;
@@ -34,7 +34,12 @@ public class DisruptorTest {
          * @param waitStrategy   the wait strategy to use for the ring buffer.
          */
         //第一步： 实例化Disruptor
-        Disruptor<CommandEvent> disruptor = new Disruptor<CommandEvent>(factory, ringBufferSize, fixedThreadPool, ProducerType.SINGLE, new BlockingWaitStrategy());
+        Disruptor<CommandEvent> disruptor = new Disruptor<CommandEvent>(
+                factory,
+                ringBufferSize,
+                fixedThreadPool,
+                ProducerType.SINGLE,
+                new BlockingWaitStrategy());
 
         //第二步： 设置事件监听
         disruptor.handleEventsWith(new CommandEventHandler());
@@ -50,7 +55,7 @@ public class DisruptorTest {
 
         //第六步： 循环生产消息，观察事件回调
         for (int i = 0; i < 1000; i++) {
-            commandEventProducer.produceEvent(""+i);
+            commandEventProducer.produceEvent("" + i);
         }
 
         //第七步： 关闭disruptor
