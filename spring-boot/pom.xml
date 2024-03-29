@@ -114,6 +114,12 @@
         </dependency>
         <!--=========================canal binlog操作=========================-->
 
+        <!--=========================disruptor操作=========================-->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.3.2</version>
+        </dependency>
     </dependencies>
 
     <build>
