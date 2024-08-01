@@ -1,3 +1,4 @@
+/*
 package com.zab.springboot.binlog;
 
 import com.alibaba.otter.canal.client.CanalConnector;
@@ -87,4 +88,4 @@ public class BinlogHandleTest {
                     "    update=" + column.getUpdated());
         }
     }
-}
+}*/
