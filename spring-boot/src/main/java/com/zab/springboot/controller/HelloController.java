@@ -57,14 +57,14 @@ public class HelloController extends BaseController {
      * 属性测试
      */
     @RequestMapping("/properties")
-    public String getProperties() {
+    public ResponseVo getProperties() {
         logger.info(test1.test1);
         logger.info(test2.test2);
         logger.info(test3.test3);
         logger.info(test4.four1);
         logger.info(test4.four2);
         logger.info(test5.relaxedBinding);
-        return "ok";
+        return ResponseVo.success("ok");
     }
 
     /**

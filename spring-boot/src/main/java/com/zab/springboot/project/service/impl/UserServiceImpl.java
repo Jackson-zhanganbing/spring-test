@@ -5,8 +5,10 @@ import com.zab.springboot.common.ResponseVo;
 import com.zab.springboot.project.domain.User;
 import com.zab.springboot.project.mapper.UserMapper;
 import com.zab.springboot.project.service.UserService;
+import org.apache.skywalking.apm.toolkit.trace.Trace;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,9 +19,16 @@ import java.util.List;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService{
 
+    @Trace
     @Override
     public ResponseVo<List<User>> getUsers() {
-        return ResponseVo.<List<User>>success(list());
+        User user = new User();
+        user.setUsername("zhangsan");
+        user.setAge(19);
+        user.setId(111L);
+        user.setWeight(120);
+
+        return ResponseVo.<List<User>>success(Arrays.asList(user));
     }
 }
 

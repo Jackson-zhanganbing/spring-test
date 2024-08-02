@@ -27,9 +27,3 @@ spring:
     username: root
     password: 20103852
     driver-class-name: com.mysql.jdbc.Driver
-
-skywalking:
-  agent:
-    service_name: spring-test
-    collector:
-      backend_service: 127.0.0.1:11800
