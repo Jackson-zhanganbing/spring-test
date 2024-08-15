@@ -30,6 +30,11 @@ public class AnnotationLoginFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest)servletRequest;
         String token = request.getHeader("token");
+        //临时去掉
+        if (StrUtil.isBlank(token)) {
+            filterChain.doFilter(servletRequest,servletResponse);
+            return;
+        }
         if(StrUtil.isBlank(token)){
             PrintWriter writer = servletResponse.getWriter();
             servletResponse.setContentType(ContentType.JSON.toString());

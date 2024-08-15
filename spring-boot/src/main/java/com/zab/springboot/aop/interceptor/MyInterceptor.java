@@ -31,7 +31,10 @@ public class MyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         log.info("================MyInterceptor preHandle================");
         String token = request.getHeader("token");
-
+        //临时去掉
+        if (StrUtil.isBlank(token)) {
+            return true;
+        }
         if (StrUtil.isBlank(token)) {
             PrintWriter writer = response.getWriter();
             response.setContentType(ContentType.JSON.toString());

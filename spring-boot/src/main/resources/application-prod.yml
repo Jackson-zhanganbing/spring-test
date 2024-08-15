@@ -25,9 +25,11 @@ spring:
   datasource:
     url: jdbc:mysql://81.68.137.141:3306/zab?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&failOverReadOnly=false
     username: root
-    password: P0zxW1DzrlB@*7Xt
+    password: 20103852
     driver-class-name: com.mysql.jdbc.Driver
-  redis:
-    host: 81.68.137.141
-    port: 6379
-    password: P0zxW1DzrlB@*7Xt
+
+skywalking:
+  agent:
+    service_name: spring-test
+    collector:
+      backend_service: 127.0.0.1:11800

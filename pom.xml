@@ -11,6 +11,7 @@
         <module>life-cycle</module>
         <module>manual-mvc</module>
         <module>spring-mvc</module>
+        <module>log-agent</module>
     </modules>
     <packaging>pom</packaging>
 
