@@ -1,7 +1,9 @@
 package com.zab.springboot.controller;
 
+import com.sun.tools.attach.VirtualMachine;
 import com.zab.springboot.aop.AspectParam;
 import com.zab.springboot.aop.ClassCheck;
+import com.zab.springboot.aop.agent.AgentTest;
 import com.zab.springboot.common.ResponseVo;
 import com.zab.springboot.controller.starter.StarterTestService;
 import com.zab.springboot.properties.*;
@@ -141,6 +143,20 @@ public class HelloController extends BaseController {
     public ResponseVo testDate(@RequestBody TestBean dto){
         Date birthday = dto.getNowDate();
         log.info(birthday.toString());
+        return ResponseVo.success("ok");
+    }
+
+    @RequestMapping("/testAgent")
+    public ResponseVo testAgent(){
+        try {
+            VirtualMachine attach = VirtualMachine.attach("404");
+            attach.loadAgent("D:\\project\\spring-test\\log-agent\\target\\log-agent-jar-with-dependencies.jar");
+            attach.detach();
+            Thread.sleep(10000);
+            System.out.println("detached");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return ResponseVo.success("ok");
     }
 }

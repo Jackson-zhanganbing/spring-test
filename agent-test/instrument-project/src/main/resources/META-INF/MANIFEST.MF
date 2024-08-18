@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
 Agent-Class: com.zab.practice.instrument.InstrumentAgent
+Premain-Class: com.zab.practice.instrument.InstrumentAgent
 Can-Retransform-Classes: true

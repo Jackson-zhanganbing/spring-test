@@ -1,5 +1,6 @@
 package com.zab.practice.instrument;
 
+
 import com.sun.tools.attach.VirtualMachine;
 
 /**
@@ -10,13 +11,10 @@ import com.sun.tools.attach.VirtualMachine;
  */
 public class AttachMain {
     public static void main(String[] args) {
-        /*List<VirtualMachineDescriptor> vms = VirtualMachine.list();
-        for (VirtualMachineDescriptor vm : vms) {
-            System.out.println(vm.displayName());
-        }*/
         try {
-            VirtualMachine attach = VirtualMachine.attach("8801");
-            attach.loadAgent("/Users/zhanganbing/IdeaProjects/spring-test/agent-test/instrument-project/target/instrument-project-1.0-SNAPSHOT-jar-with-dependencies.jar");
+            String property = System.getProperty("user.dir");
+            VirtualMachine attach = VirtualMachine.attach("17660");
+            attach.loadAgent(property + "/agent-test/instrument-project/target/instrument-project-1.0-SNAPSHOT-jar-with-dependencies.jar");
             Thread.sleep(1000000);
             attach.detach();
             System.out.println("detached");
