@@ -70,6 +70,7 @@ public class OcpTest {
             this.radius = radius;
         }
 
+        @Override
         public double area() {
             return Math.PI * radius * radius;
         }
@@ -84,6 +85,7 @@ public class OcpTest {
             this.height = height;
         }
 
+        @Override
         public double area() {
             return width * height;
         }
