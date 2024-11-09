@@ -2,7 +2,7 @@ package com.changan.designpattern.pattern.create.simplefactory;
 
 /**
  * 简单工厂
- * 特点：可以根据不同类型创建产品，但是新增产品类型，会修改工厂代码，不符合：开闭原则
+ * 特点：可以根据不同类型创建产品，但是新增产品类型，会修改工厂代码，不符合开闭原则
  *
  * @author zab
  * @date 2024/11/9 11:40
