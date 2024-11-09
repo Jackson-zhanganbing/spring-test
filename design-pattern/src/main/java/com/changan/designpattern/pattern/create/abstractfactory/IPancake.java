@@ -1,16 +1,16 @@
 package com.changan.designpattern.pattern.create.abstractfactory;
 
 /**
- * 汽车产品A
+ * 煎饼
  *
  * @author zab
  * @date 2024/11/9 11:33
  */
-public interface ICarA {
+public interface IPancake {
 
     /**
-     * 汽车跑起来
+     * 业务
      *
      */
-    void run();
+    void doSomething();
 }

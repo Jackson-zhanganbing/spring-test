@@ -8,18 +8,23 @@ package com.changan.designpattern.pattern.create.abstractfactory;
  */
 public class Test {
     public static void main(String[] args) {
-        AbstractCarFactory factory1 = new Factory1();
-        ICarA iCarA1 = factory1.productACar();
-        ICarB iCarB1 = factory1.productBCar();
-        iCarA1.run();
-        iCarB1.run();
+        AbstractPancakeFactory porkMeatFlossWheatPancakeFactory = new PorkMeatFlossWheatPancakeFactory();
+        IMeatFloss iMeatFloss = porkMeatFlossWheatPancakeFactory.produceMeatFloss();
+        IPancake iPancake = porkMeatFlossWheatPancakeFactory.producePancake();
+
+        iMeatFloss.doSomething();
+        iPancake.doSomething();
 
 
-        AbstractCarFactory factory2 = new Factory2();
-        ICarA iCarA2 = factory2.productACar();
-        ICarB iCarB2 = factory2.productBCar();
-        iCarA2.run();
-        iCarB2.run();
+
+        AbstractPancakeFactory chickMeatFlossCornPancakeFactory = new ChickMeatFlossCornPancakeFactory();
+        IMeatFloss iMeatFloss1 = chickMeatFlossCornPancakeFactory.produceMeatFloss();
+        IPancake iPancake1 = chickMeatFlossCornPancakeFactory.producePancake();
+
+        iMeatFloss1.doSomething();
+        iPancake1.doSomething();
+
+
     }
 
 }

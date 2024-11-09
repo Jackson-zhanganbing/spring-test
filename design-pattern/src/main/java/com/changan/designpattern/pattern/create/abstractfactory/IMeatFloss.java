@@ -1,16 +1,16 @@
 package com.changan.designpattern.pattern.create.abstractfactory;
 
 /**
- * 汽车产品B
+ * 肉松
  *
  * @author zab
  * @date 2024/11/9 11:33
  */
-public interface ICarB {
+public interface IMeatFloss {
 
     /**
-     * 汽车跑起来
+     * 业务方法
      *
      */
-    void run();
+    void doSomething();
 }
