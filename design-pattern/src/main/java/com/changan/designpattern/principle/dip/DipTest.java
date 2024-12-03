@@ -38,6 +38,7 @@ public class DipTest {
     }
 
     class DipFileManager implements DataSaver {
+        @Override
         public void save(String data) {
             // 保存数据到文件
             System.out.println("Data saved to file: " + data);
@@ -45,6 +46,7 @@ public class DipTest {
     }
 
     class DipDatabaseManager implements DataSaver {
+        @Override
         public void save(String data) {
             // 保存数据到数据库
             System.out.println("Data saved to database: " + data);
