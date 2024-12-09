@@ -8,10 +8,12 @@ package com.changan.designpattern.pattern.create.builder;
  */
 public class Test {
     public static void main(String[] args) {
-        BuilderClass changan = BuilderClass.builder()
-                .name("changan")
-                .id(666L)
-                .build();
+        HouseBuilder builder = new WoodenHouseBuilder();
+        HouseDirector director = new HouseDirector(builder);
 
+        director.constructHouse();
+
+        House house = builder.getResult();
+        System.out.println(house);
     }
 }

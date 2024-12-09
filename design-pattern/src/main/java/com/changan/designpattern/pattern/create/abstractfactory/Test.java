@@ -8,7 +8,7 @@ package com.changan.designpattern.pattern.create.abstractfactory;
  */
 public class Test {
     public static void main(String[] args) {
-        AbstractPancakeFactory porkMeatFlossWheatPancakeFactory = new PorkMeatFlossWheatPancakeFactory();
+        IPancakeMeatFlossFactory porkMeatFlossWheatPancakeFactory = new PorkMeatFlossWheatPancakeFactory();
         IMeatFloss iMeatFloss = porkMeatFlossWheatPancakeFactory.produceMeatFloss();
         IPancake iPancake = porkMeatFlossWheatPancakeFactory.producePancake();
 
@@ -17,7 +17,7 @@ public class Test {
 
 
 
-        AbstractPancakeFactory chickMeatFlossCornPancakeFactory = new ChickMeatFlossCornPancakeFactory();
+        IPancakeMeatFlossFactory chickMeatFlossCornPancakeFactory = new ChickenMeatFlossCornPancakeFactory();
         IMeatFloss iMeatFloss1 = chickMeatFlossCornPancakeFactory.produceMeatFloss();
         IPancake iPancake1 = chickMeatFlossCornPancakeFactory.producePancake();
 

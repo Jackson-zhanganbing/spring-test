@@ -6,7 +6,7 @@ package com.changan.designpattern.pattern.create.abstractfactory;
  * @author zab
  * @date 2024/11/9 21:28
  */
-public class PorkMeatFlossWheatPancakeFactory implements AbstractPancakeFactory {
+public class PorkMeatFlossWheatPancakeFactory implements IPancakeMeatFlossFactory {
 
     @Override
     public IPancake producePancake() {
