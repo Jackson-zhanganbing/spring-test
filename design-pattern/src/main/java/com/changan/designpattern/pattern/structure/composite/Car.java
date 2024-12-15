@@ -3,21 +3,22 @@ package com.changan.designpattern.pattern.structure.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Car implements CarComponent {
-    private List<CarComponent> components = new ArrayList();
+public class Car implements ICarComponent {
 
-    public void addComponent(CarComponent component) {
+    private List<ICarComponent> components = new ArrayList();
+
+    public void addComponent(ICarComponent component) {
         components.add(component);
     }
 
-    public void removeComponent(CarComponent component) {
+    public void removeComponent(ICarComponent component) {
         components.remove(component);
     }
 
     @Override
     public void showDetails() {
         System.out.println("Car Components:");
-        for (CarComponent component : components) {
+        for (ICarComponent component : components) {
             component.showDetails();
         }
     }

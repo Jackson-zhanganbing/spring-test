@@ -9,6 +9,6 @@ package com.changan.designpattern.pattern.create.factory;
 public class BCarFactory extends CarFactory{
     @Override
     public ICar createProduct() {
-        return new ACar("SL", "123");
+        return new BCar("SL", "123");
     }
 }

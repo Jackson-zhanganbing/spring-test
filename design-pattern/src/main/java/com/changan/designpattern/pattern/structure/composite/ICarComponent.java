@@ -6,6 +6,6 @@ package com.changan.designpattern.pattern.structure.composite;
  * @author zab
  * @date 2024/11/11 22:59
  */
-public interface CarComponent {
+public interface ICarComponent {
     void showDetails();
 }

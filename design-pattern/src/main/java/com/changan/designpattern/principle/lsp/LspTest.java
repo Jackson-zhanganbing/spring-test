@@ -18,6 +18,7 @@ public class LspTest {
         }
     }
 
+    //麻雀
     class Sparrow extends Bird {
     }
 

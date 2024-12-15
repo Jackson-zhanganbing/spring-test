@@ -20,28 +20,35 @@ public class IspTest {
     }
 
     class Dog implements Animal {
+        @Override
         public void eat() {
             System.out.println("Dog is eating.");
         }
 
+        @Override
         public void fly() {
             throw new UnsupportedOperationException("Dogs can't fly!");
         }
 
+        @Override
         public void swim() {
             System.out.println("Dog is swimming.");
         }
     }
 
     class Fish implements Animal {
+
+        @Override
         public void eat() {
             System.out.println("Fish is eating.");
         }
 
+        @Override
         public void fly() {
             throw new UnsupportedOperationException("Fish can't fly!");
         }
 
+        @Override
         public void swim() {
             System.out.println("Fish is swimming.");
         }
@@ -64,30 +71,36 @@ public class IspTest {
     }
 
     class IspDog implements Eater, Swimmer {
+        @Override
         public void eat() {
             System.out.println("Dog is eating.");
         }
 
+        @Override
         public void swim() {
             System.out.println("Dog is swimming.");
         }
     }
 
     class IspFish implements Eater, Swimmer {
+        @Override
         public void eat() {
             System.out.println("Fish is eating.");
         }
 
+        @Override
         public void swim() {
             System.out.println("Fish is swimming.");
         }
     }
 
     class IspBird implements Eater, Flyer {
+        @Override
         public void eat() {
             System.out.println("Bird is eating.");
         }
 
+        @Override
         public void fly() {
             System.out.println("Bird is flying.");
         }

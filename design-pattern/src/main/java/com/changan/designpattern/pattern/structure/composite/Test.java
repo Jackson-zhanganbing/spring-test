@@ -10,9 +10,9 @@ public class Test {
     public static void main(String[] args) {
         Car car = new Car();
 
-        CarComponent engine = new Engine();
-        CarComponent tire1 = new Tire();
-        CarComponent tire2 = new Tire();
+        ICarComponent engine = new Engine();
+        ICarComponent tire1 = new Tire();
+        ICarComponent tire2 = new Tire();
 
         car.addComponent(engine);
         car.addComponent(tire1);

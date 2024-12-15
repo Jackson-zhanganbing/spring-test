@@ -74,7 +74,6 @@ public class LodTest {
         }
     }
 
-    // 示例使用
     public class Main {
         public void main(String[] args) {
             LodCustomer customer = new LodCustomer();
