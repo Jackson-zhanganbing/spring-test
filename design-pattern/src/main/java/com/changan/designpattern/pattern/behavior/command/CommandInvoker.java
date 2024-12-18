@@ -6,7 +6,7 @@ package com.changan.designpattern.pattern.behavior.command;
  * @author zab
  * @date 2024/11/13 22:00
  */
-public class CarRemoteControl {
+public class CommandInvoker {
 
     private CarCommand command;
 

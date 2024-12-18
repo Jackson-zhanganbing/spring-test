@@ -14,14 +14,14 @@ public class Test {
         BrakeCarCommand brakeCarCommand = new BrakeCarCommand(car);
         StopCarCommand stopCarCommand = new StopCarCommand(car);
 
-        CarRemoteControl carRemoteControl = new CarRemoteControl();
-        carRemoteControl.setCommand(startCarCommand);
-        carRemoteControl.callCommand();
+        CommandInvoker commandInvoker = new CommandInvoker();
+        commandInvoker.setCommand(startCarCommand);
+        commandInvoker.callCommand();
 
-        carRemoteControl.setCommand(brakeCarCommand);
-        carRemoteControl.callCommand();
+        commandInvoker.setCommand(brakeCarCommand);
+        commandInvoker.callCommand();
 
-        carRemoteControl.setCommand(stopCarCommand);
-        carRemoteControl.callCommand();
+        commandInvoker.setCommand(stopCarCommand);
+        commandInvoker.callCommand();
     }
 }
