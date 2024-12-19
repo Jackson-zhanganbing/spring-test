@@ -17,7 +17,7 @@ public class ChatRoomImpl implements IChatRoom{
     public void sendMsg(String msg, User user) {
         for (User u : userList) {
             if(u != user){
-                user.receive(msg);
+                u.receive(msg);
             }
         }
     }

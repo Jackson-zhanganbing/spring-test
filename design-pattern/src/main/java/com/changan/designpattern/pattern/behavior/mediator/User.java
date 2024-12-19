@@ -24,6 +24,6 @@ public class User {
     }
 
     public void receive(String msg) {
-        System.out.println("收到聊天室消息：" + msg);
+        System.out.println(name + "收到聊天室消息：" + msg);
     }
 }
