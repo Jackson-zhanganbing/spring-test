@@ -8,15 +8,15 @@ package com.changan.designpattern.pattern.behavior.observer;
  */
 public class Test {
     public static void main(String[] args) {
-        PersonOne personOne = new PersonOne();
-        PersonTwo personTwo = new PersonTwo();
+        ObserverOne observerOne = new ObserverOne();
+        ObserverTwo observerTwo = new ObserverTwo();
 
         //构造天气预报
         ConcreteWeatherSubject concreteWeatherSubject = new ConcreteWeatherSubject();
 
         //订阅者订阅
-        concreteWeatherSubject.registerObserver(personOne);
-        concreteWeatherSubject.registerObserver(personTwo);
+        concreteWeatherSubject.registerObserver(observerOne);
+        concreteWeatherSubject.registerObserver(observerTwo);
 
         //天气预报结果
         concreteWeatherSubject.setWeather("晴");
@@ -25,7 +25,7 @@ public class Test {
         concreteWeatherSubject.notifyObservers();
 
         //订阅者1取消
-        concreteWeatherSubject.removeObserver(personOne);
+        concreteWeatherSubject.removeObserver(observerOne);
         System.out.println("=============订阅者取消==============");
 
         //天气预报结果
