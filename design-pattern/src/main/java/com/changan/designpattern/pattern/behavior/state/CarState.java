@@ -11,5 +11,5 @@ public interface CarState {
     /**
      * 显示状态
      */
-    void showState();
+    void showState(Car car);
 }

@@ -9,14 +9,12 @@ package com.changan.designpattern.pattern.behavior.state;
 public class Test {
     public static void main(String[] args) {
         Car car = new Car(new StopState());
-
-        car.driving();
         car.getCarState();
 
-        car.braking();
+        car = new Car(new BrakingState());
         car.getCarState();
 
-        car.stop();
+        car = new Car(new DrivingState());
         car.getCarState();
     }
 }

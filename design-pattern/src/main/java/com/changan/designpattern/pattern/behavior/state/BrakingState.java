@@ -9,7 +9,12 @@ package com.changan.designpattern.pattern.behavior.state;
 public class BrakingState implements CarState{
 
     @Override
-    public void showState() {
-        System.out.println("车辆处于刹车状态，请控制好方向");
+    public void showState(Car car) {
+        car.setCarState(this);
+    }
+
+    @Override
+    public String toString() {
+        return "车辆处于刹车状态，请控制好方向";
     }
 }

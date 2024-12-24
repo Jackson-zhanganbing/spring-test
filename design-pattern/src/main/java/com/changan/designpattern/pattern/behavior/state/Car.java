@@ -17,20 +17,7 @@ public class Car {
         this.carState = carState;
     }
 
-    public void stop(){
-        System.out.println("车辆停止");
-        this.setCarState(new StopState());
-    }
-    public void driving(){
-        System.out.println("车辆行驶");
-        this.setCarState(new DrivingState());
-    }
-    public void braking(){
-        System.out.println("车辆刹车");
-        this.setCarState(new BrakingState());
-    }
-
-    public void getCarState(){
-        carState.showState();
+    public CarState getCarState(){
+        return carState;
     }
 }

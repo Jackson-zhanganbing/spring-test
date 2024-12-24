@@ -8,7 +8,7 @@ package com.changan.designpattern.pattern.behavior.strategy;
 public class Test {
     public static void main(String[] args) {
         Boyfriend boyfriend = new Boyfriend(new ComplimentStrategy());
-        boyfriend.coaxGirl("我不是魔镜，我不会骗你的！");
+        boyfriend.coaxGirl("我不会骗你的！");
 
         boyfriend = new Boyfriend(new CareStrategy());
         boyfriend.coaxGirl("别难过了！");

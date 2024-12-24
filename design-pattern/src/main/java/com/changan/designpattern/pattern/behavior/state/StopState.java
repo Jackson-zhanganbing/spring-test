@@ -9,7 +9,11 @@ package com.changan.designpattern.pattern.behavior.state;
 public class StopState implements CarState{
 
     @Override
-    public void showState() {
-        System.out.println("车辆处于停止状态，请手刹");
+    public void showState(Car car) {
+        car.setCarState(this);
+    }
+    @Override
+    public String toString() {
+        return "车辆处于停止状态，请手刹";
     }
 }
