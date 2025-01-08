@@ -1,5 +1,7 @@
 package com.zab.designpattern.pattern.behavior.interpreter;
 
+import java.util.List;
+
 /**
  * 解释器模式测试
  *
@@ -9,7 +11,6 @@ package com.zab.designpattern.pattern.behavior.interpreter;
 public class Test {
     public static void main(String[] args) {
         String input = "3 5 + 4 -";
-
         ExpressionParser expressionParser = new ExpressionParser();
         Expression parse = expressionParser.parse(input);
         System.out.println(parse.interpret());
