@@ -1,7 +1,6 @@
 package com.zab.designpattern.pattern.behavior.mediator;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 /**
  * 聊天室实现
@@ -11,19 +10,9 @@ import java.util.List;
  */
 public class ChatRoomImpl implements IChatRoom{
 
-    public List<User> userList = new ArrayList<>();
-
     @Override
-    public void sendMsg(String msg, User user) {
-        for (User u : userList) {
-            if(u != user){
-                u.receive(msg);
-            }
-        }
+    public void showMsg(User user, String msg) {
+        System.out.println(new Date().toString() + " [" + user.getName() +"] : " + msg);
     }
 
-    @Override
-    public void addUser(User user) {
-        userList.add(user);
-    }
 }

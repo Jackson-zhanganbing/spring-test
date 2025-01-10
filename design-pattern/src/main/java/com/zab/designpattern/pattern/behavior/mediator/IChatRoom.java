@@ -7,14 +7,10 @@ package com.zab.designpattern.pattern.behavior.mediator;
  * @date 2024/11/13 22:44
  */
 public interface IChatRoom {
-    /**
-     * 用户发送消息
-     */
-    void sendMsg(String msg, User user);
 
     /**
-     * 新增用户
+     * 聊天室显示消息
      */
-    void addUser(User user);
+    void showMsg(User user, String msg);
 
 }

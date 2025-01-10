@@ -15,8 +15,10 @@ public class Test {
 
         user1.sendMsg("你们好", chatRoom);
         System.out.println("=======================");
+
         user2.sendMsg("你们好", chatRoom);
         System.out.println("=======================");
+
         user3.sendMsg("你们好", chatRoom);
     }
 }

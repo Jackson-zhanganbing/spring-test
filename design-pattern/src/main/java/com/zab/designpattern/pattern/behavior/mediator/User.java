@@ -14,16 +14,25 @@ public class User {
     public User(String name, IChatRoom chatRoom) {
         this.name = name;
         this.chatRoom = chatRoom;
-
-        chatRoom.addUser(this);
     }
 
     public void sendMsg(String msg, IChatRoom chatRoom){
-        System.out.println(name + "发送了: " + msg);
-        chatRoom.sendMsg(msg, this);
+        chatRoom.showMsg(this, msg);
     }
 
-    public void receive(String msg) {
-        System.out.println(name + "收到聊天室消息：" + msg);
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public IChatRoom getChatRoom() {
+        return chatRoom;
+    }
+
+    public void setChatRoom(IChatRoom chatRoom) {
+        this.chatRoom = chatRoom;
     }
 }
