@@ -28,6 +28,10 @@ public class Originator {
         return new Memento(state);
     }
 
+    /**
+     * 恢复
+     *
+     */
     public String getStateFromMemento(Memento memento){
         this.setState(memento.getState());
         return this.getState();
