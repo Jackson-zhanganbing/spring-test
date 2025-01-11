@@ -10,5 +10,5 @@ public interface IEngine {
     /**
      * 发动机描述
      */
-    void desc();
+    void start();
 }

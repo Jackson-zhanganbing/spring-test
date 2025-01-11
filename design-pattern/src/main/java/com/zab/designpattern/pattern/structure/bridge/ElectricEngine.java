@@ -9,7 +9,7 @@ package com.zab.designpattern.pattern.structure.bridge;
 public class ElectricEngine implements IEngine{
 
     @Override
-    public void desc() {
-        System.out.println("电动引擎");
+    public void start() {
+        System.out.println("电动引擎启动");
     }
 }

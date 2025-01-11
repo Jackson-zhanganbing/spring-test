@@ -9,7 +9,7 @@ package com.zab.designpattern.pattern.structure.bridge;
 public class HybridEngine implements IEngine{
 
     @Override
-    public void desc() {
-        System.out.println("混动引擎");
+    public void start() {
+        System.out.println("混动引擎启动");
     }
 }
