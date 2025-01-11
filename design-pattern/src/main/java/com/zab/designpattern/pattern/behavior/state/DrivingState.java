@@ -9,7 +9,7 @@ package com.zab.designpattern.pattern.behavior.state;
 public class DrivingState implements CarState{
 
     @Override
-    public void showState(Car car) {
+    public void doAction(Car car) {
         car.setCarState(this);
     }
 

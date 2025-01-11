@@ -8,13 +8,21 @@ package com.zab.designpattern.pattern.behavior.state;
  */
 public class Test {
     public static void main(String[] args) {
-        Car car = new Car(new StopState());
-        car.getCarState();
+        Car car = new Car();
 
-        car = new Car(new BrakingState());
-        car.getCarState();
+        DrivingState drivingState = new DrivingState();
+        drivingState.doAction(car);
 
-        car = new Car(new DrivingState());
-        car.getCarState();
+        car.doDriving();
+
+        BrakingState brakingState = new BrakingState();
+        brakingState.doAction(car);
+
+        car.doDriving();
+
+        StopState stopState = new StopState();
+        stopState.doAction(car);
+
+        car.doDriving();
     }
 }

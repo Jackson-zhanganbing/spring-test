@@ -9,8 +9,8 @@ package com.zab.designpattern.pattern.behavior.state;
 public class Car {
     private CarState carState;
 
-    public Car(CarState carState) {
-        this.carState = carState;
+    public Car() {
+
     }
 
     public void setCarState(CarState carState) {
@@ -19,5 +19,9 @@ public class Car {
 
     public CarState getCarState(){
         return carState;
+    }
+
+    public void doDriving(){
+        System.out.println(carState);
     }
 }

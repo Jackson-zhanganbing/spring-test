@@ -9,7 +9,7 @@ package com.zab.designpattern.pattern.behavior.state;
 public interface CarState {
 
     /**
-     * 显示状态
+     * 操作
      */
-    void showState(Car car);
+    void doAction(Car car);
 }
