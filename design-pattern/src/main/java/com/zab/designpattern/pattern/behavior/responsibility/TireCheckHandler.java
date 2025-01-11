@@ -19,7 +19,11 @@ public class TireCheckHandler implements CarCheckHandler{
         if (car.getTirePressure() < 2.0) {
             System.out.println("轮胎压力低，请检查轮胎！");
         } else {
-            System.out.println("轮胎正常，检查完成。");
+            System.out.println("轮胎正常，进行下一项。");
+            if (nextHandler != null) {
+                nextHandler.handleRequest(car);
+            }
+
         }
     }
 }

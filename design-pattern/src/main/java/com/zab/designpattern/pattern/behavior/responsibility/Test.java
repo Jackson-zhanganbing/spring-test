@@ -9,13 +9,16 @@ package com.zab.designpattern.pattern.behavior.responsibility;
 public class Test {
     public static void main(String[] args) {
         Car car = new Car(99, 1.9);
+        CarCheckHandler checkChain = getCheckChain();
 
+        checkChain.handleRequest(car);
+
+    }
+
+    private static CarCheckHandler getCheckChain(){
         OilCheckHandler oilCheckHandler = new OilCheckHandler();
         TireCheckHandler tireCheckHandler = new TireCheckHandler();
-
         oilCheckHandler.setNextHandler(tireCheckHandler);
-
-        oilCheckHandler.handleRequest(car);
-
+        return oilCheckHandler;
     }
 }
