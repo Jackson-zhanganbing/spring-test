@@ -12,7 +12,6 @@ public class Originator {
 
     public Originator(String state) {
         this.state = state;
-        System.out.println("发起人的状态：" + state);
     }
 
     public String getState() {
@@ -21,7 +20,6 @@ public class Originator {
 
     public void setState(String state) {
         this.state = state;
-        System.out.println("发起人的状态：" + state);
     }
 
     public Memento saveStateToMemento(){
@@ -32,8 +30,7 @@ public class Originator {
      * 恢复
      *
      */
-    public String getStateFromMemento(Memento memento){
-        this.setState(memento.getState());
-        return this.getState();
+    public void getStateFromMemento(Memento memento){
+        state = memento.getState();
     }
 }
