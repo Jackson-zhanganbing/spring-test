@@ -22,3 +22,4 @@ public class Boyfriend {
         coaxGfStrategy.coax(message);
     }
 }
+

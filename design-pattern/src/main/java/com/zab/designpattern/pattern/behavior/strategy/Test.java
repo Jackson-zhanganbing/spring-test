@@ -8,13 +8,13 @@ package com.zab.designpattern.pattern.behavior.strategy;
 public class Test {
     public static void main(String[] args) {
         Boyfriend boyfriend = new Boyfriend(new ComplimentStrategy());
-        boyfriend.coaxGirl("我不会骗你的！");
+        boyfriend.coaxGirl("【PS：先发个1314红包。】");
 
         boyfriend = new Boyfriend(new CareStrategy());
-        boyfriend.coaxGirl("别难过了！");
+        boyfriend.coaxGirl("【PS：先发个520红包。】");
 
         boyfriend = new Boyfriend(new FunStrategy());
-        boyfriend.coaxGirl("最近新上映的！");
+        boyfriend.coaxGirl("【PS：先发个10001红包。】");
 
     }
 }

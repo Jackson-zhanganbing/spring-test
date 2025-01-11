@@ -9,6 +9,6 @@ public class FunStrategy implements CoaxGfStrategy{
 
     @Override
     public void coax(String something) {
-        System.out.println("我们去看一部搞笑电影吧！" + something);
+        System.out.println("我们去看一下大话西游吧！" + something);
     }
 }

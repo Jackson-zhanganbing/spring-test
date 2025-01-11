@@ -9,6 +9,6 @@ public class ComplimentStrategy implements CoaxGfStrategy{
 
     @Override
     public void coax(String something) {
-        System.out.println("我觉得你是世界上最美丽的女孩！" + something);
+        System.out.println("我觉得你长得好像紫霞仙子啊！" + something);
     }
 }
