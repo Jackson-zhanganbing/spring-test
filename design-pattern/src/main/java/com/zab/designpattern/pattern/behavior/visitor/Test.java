@@ -12,10 +12,10 @@ public class Test {
         VisitorTwo visitorTwo = new VisitorTwo();
 
         UserBaseData userBaseData = new UserBaseData();
-        userBaseData.setUserName("zhangsan");
+        userBaseData.setUserName("张三");
 
         SimData simData = new SimData();
-        simData.setSimNo("111111");
+        simData.setSimNo("666");
 
         userBaseData.accept(visitorOne);
         simData.accept(visitorOne);

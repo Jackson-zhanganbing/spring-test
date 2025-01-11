@@ -8,11 +8,16 @@ package com.zab.designpattern.pattern.behavior.template;
  */
 public abstract class KnowledgeLearner {
     public final void learn(){
+        preview();
         visitClass();
         review();
         practice();
         teach();
         System.out.println("终于学会了！");
+    }
+
+    public void preview(){
+        System.out.println("预习");
     }
 
     /**
